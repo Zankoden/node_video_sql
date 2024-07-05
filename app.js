@@ -78,23 +78,6 @@ app.post("/createVideoWithFile", upload.single('video_path'), async (req, res) =
     }
 });
 
-// app.post("/createVideoWithFile", upload.single('video_path'), async (req, res) => {
-//     const { video_name, video_description, genre } = req.body;
-//     const video_path = req.file.path;
-
-//     if (!video_name || !video_path) {
-//         return res.status(400).send("Video name and file are required");
-//     }
-
-//     try {
-//         const video = await createVideo(video_name, video_description, genre, video_path);
-//         res.status(201).send(video);
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send("Error creating video");
-//     }
-// });
-
 app.put("/updateVideoById/:video_id", async (req, res) => {
     const video_id = req.params.video_id;
     const { video_name, video_description, genre } = req.body;
